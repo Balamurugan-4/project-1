@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<center>
+<header>
+    <title>hyper jobs.com</title>
+    <link rel="stylesheet" href="style.css">
+    <h1>HYPER JOBS</h1>
+      <div class="logo-container">
+        <img src="logo.jpg" alt="Logo" class="logo">
+    </div>
+      <hr>
+      <div class="nav">
+      <ul>
+        <li><a href="C:\Users\admin\Documents\New folder\new\home.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li><a href="C:\Users\admin\Documents\New folder\new\about.html">About</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </ul>
+    </div>
+    <h4><div class="search">
+        <input id="searchBar" input type="text" placeholder="search jobs" onclick="filterItems()">
+        <button>search</button>
+    </div></h4>
+        <div class="filter-container">
+            <label><input type="checkbox" class="filter-checkbox"  value="Full-Time"> Full-Time</label>
+            <label><input type="checkbox" class="filter-checkbox"  value="Part-Time"> Part-Time</label>
+            <label><input type="checkbox" class="filter-checkbox"  value="Work-From-Home" > Work-From-Home</label>
+        </div>
+</header>   
+        </center>
+        <body>
+            <div class="jobs">
+            <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jos For You</h1>
+            <hr>
+            <ul id="itemList">
+                <li class="item" data-job-type="Work-From-Home">Data Entry Operator<br>coimbatore 
+                <br><br><button><a href="C:\Users\admin\Documents\New folder\new\data entry.html">Apply now</a></button><br><br><hr></li>
+                <li class="item" data-job-type="Full-Time">Front-end Developer<br>chennai 
+                <br><br><button><a href="C:\Users\admin\Documents\New folder\new\Frot-end.html">Apply now</a></button><br><br><hr></li>
+                <li class="item" data-job-type="Work-From-Home" >Marketing Executive<br>bangalore 
+                <br><br><button><a href="C:\Users\admin\Documents\New folder\new\Marketing.html">Apply now</a></button><br><br><hr></li>
+                <li class="item" data-job-type="Full-Time">Sales Executive<br>chennai 
+                <br><br><button><a href="C:\Users\admin\Documents\New folder\new\Sales.html">Apply now</a></button><br><br><hr></li>
+                <li class="item" data-job-type="Full-Time">Back-end Developer<br>coimbatore 
+                <br><br><button><a href="C:\Users\admin\Documents\New folder\new\Back-end.html">Apply now</a></button><br><br><hr></li>
+                <li class="item" data-job-type="Work-From-Home">Client Partner<br>chennai 
+                <br><br><button><a href="C:\Users\admin\Documents\New folder\new\Client.html">Apply now</a></button><br><br><hr></li>
+                <li class="item" data-job-type="Full-Time" >Web Developer<br>chennai 
+                <br><br><button><a href="C:\Users\admin\Documents\New folder\new\Web.html">Apply now</a></button><br><br><hr></li>
+                <li class="item" data-job-type="Full-Time">Accountant<br>coimbatore 
+                <br><br><button><a href="C:\Users\admin\Documents\New folder\new\Accountant.html">Apply now</a></button><br><br><hr></li>
+                <li class="item" data-job-type="Full-Time">Application Developer<br>coimbatore 
+                <br><br><button><a href="C:\Users\admin\Documents\New folder\new\Application.html">Apply now</a></button><br><br><hr></li>
+                <li class="item"data-job-type="Part-Time" >Tele caller<br>bangalore 
+                <br><br><button><a href="C:\Users\admin\Documents\New folder\new\tele.html">Apply now</a></button><br><br><hr></li>
+                </ul>
+            </div>
+            <script>
+                function filterItems() {
+                    // Get the value of the search bar
+                    const searchTerm = document.getElementById('searchBar').value.toLowerCase();
+        
+                    // Get all items
+                    const items = document.querySelectorAll('#itemList .item');
+        
+                    // Show/hide items based on search term
+                    items.forEach(item => {
+                        const itemText = item.textContent.toLowerCase();
+                        if (itemText.includes(searchTerm)) {
+                            item.style.display = ''; // Show item
+                        } else {
+                            item.style.display = 'none'; // Hide item
+                        }
+                    });
+                }
+                // Function to filter job items
+        function filterJobs() {
+            // Get all checked filter values
+            const selectedFilters = Array.from(document.querySelectorAll('.filter-checkbox:checked'))
+                .map(checkbox => checkbox.value);
+
+            // Get all job items
+            const jobItems = document.querySelectorAll('.item');
+
+            // Show/hide job items based on selected filters
+            jobItems.forEach(item => {
+                const jobType = item.getAttribute('data-job-type');
+                if (selectedFilters.length === 0 || selectedFilters.includes(jobType)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Add event listeners to checkboxes
+        document.querySelectorAll('.filter-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', filterJobs);
+        });
+
+        // Initial filter application
+        filterJobs();
+            </script>
+</body>
+<footer>
+    <p><a href="C:\Users\admin\Documents\New folder\new\terms.html"> Terms and conditions</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="C:\Users\admin\Documents\New folder\new\policy.html">Privacy policies</a></p>
+</footer>
+</html>
